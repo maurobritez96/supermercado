@@ -1,9 +1,13 @@
 package model;
 
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class Proveedor extends Persona{
-    private String razonSocial;
+@AllArgsConstructor
+@NoArgsConstructor
+public class Proveedor {
+    private String nombre;
+    private String apellido;
 }

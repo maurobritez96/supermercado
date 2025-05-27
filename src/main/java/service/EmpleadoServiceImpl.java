@@ -3,7 +3,6 @@ package service;
 import model.Empleado;
 import repository.EmpleadoRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EmpleadoServiceImpl {
@@ -17,21 +16,18 @@ public class EmpleadoServiceImpl {
         return this.repository.getEmpleados();
     }
 
-    public Empleado create(Empleado empleado){
-        return null;
+    public void create(Empleado empleado){
+        this.repository.save(empleado);
     }
-    public Empleado findOne(Empleado empleado){
-        return null;
-    }
-    public List<Empleado> findByDni(String dni){
-        List<Empleado> empleadosResult = new ArrayList<>();
-        for(Empleado empleadoRecorrido : repository.getEmpleados()){
-            if(empleadoRecorrido.getDni().equals(dni))
-                empleadosResult.add(empleadoRecorrido);
-        }
-        return empleadosResult;
-    }
-    public void update(Empleado empleadoSeleccionado, Empleado empleadoActualizado){}
 
-    public void delete(Empleado empleado){}
+    public List<Empleado> findByDni(String dni){
+        return this.repository.findOne(dni);
+    }
+    public void update(Empleado empleado){
+        this.repository.update(empleado);
+    }
+
+    public void delete(Empleado empleado){
+        this.repository.delete(empleado);
+    }
 }

@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class Proveedor {
     private String nombre;
     private String apellido;
+    private String cuit;
+    private String telefono;
 }
